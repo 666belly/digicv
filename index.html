@@ -14,11 +14,16 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet" />
   </head>
   <body>
     <header>
-        <div class="typewriter" id="typewriter"></div>
-        <script src="script.js"></script>
+      <div class="typewriter" id="typewriter"></div>
+      <script src="script.js"></script>
     </header>
     <!-- Sidefoot -->
     <div class="sidefoot">
@@ -72,13 +77,32 @@
               tabindex="0">
               <h4 id="list-item-1">About me</h4>
               <p>
-                I possess a diverse background that spans both professional and
-                academic environments. My experiences encompass working
-                autonomously and collaborating effectively within both
-                large-scale and small teams. Additionally, my previous roles in
-                service and design have enriched my skill set and
-                provided me with a well-rounded perspective.
+                Hello there! I’m Isabel, a passionate junior software developer
+                with a good foundation in both theoretical and practical aspects
+                of programming, as well as a passion for building creative
+                software. <br />
+                <br />
+                My journey into programming actually started in my early teenage
+                years, tinkering and experimenting with code on the blogging
+                platform Tumblr - and I could never really let go of the coding.
+                This is my digital CV, or portfolio rather. A digital curriculum
+                vitae designed to showcase my skills, projects and experiences
+                in a dynamic format. It’s also a testament to my knowledge of
+                HTML, CSS, JavaScript and front-end frameworks, showing my
+                ability to create user friendly, responsive websites. <br />
+                <br />
+                I've had the chance to work in a range of different
+                environments, both collaborating with large teams but also
+                working more autonomously. My background isn't just in
+                development – my experiences in service and design have given me
+                a unique perspective that enhances my approach to software.
+                <br />
+                <br />
+                I'm always excited to learn and take on new challenges! So if
+                you'd like to check out more of my work, feel free to browse
+                through my portfolio or connect with me on GitHub!
               </p>
+
               <h4 id="list-item-2">Skills</h4>
               <h5>Programming languages I'm familiar with</h5>
               <ul>
@@ -87,7 +111,7 @@
                 <li>JavaScript</li>
                 <li>Java</li>
               </ul>
-              <br>
+              <br />
               <h5>Languages I speak</h5>
               <ul>
                 <li>English</li>
@@ -109,16 +133,14 @@
               <div class="row">
                 <div class="col-md-4 project-item">
                   <div class="card">
-                    <img
-                      src="img/project1.png"
-                      class="card-img-top"
-                      alt="Project 1 Screenshot" />
                     <div class="card-body">
                       <h5 class="card-title">Airportsimulator</h5>
+                      <img src="img/csharp.png" height="20px" />
                       <p class="card-text">
-                        A Windows Forms application built in C# that simulates an
-                        airport environment, allowing users to manage aircraft
-                        takeoffs, landings, calculate flight times, and more. 
+                        A Windows Forms application built in C# that simulates
+                        an airport environment, allowing users to manage
+                        aircraft takeoffs, landings, calculate flight times, and
+                        more.
                       </p>
                       <a
                         href="https://github.com/666belly/airportsimulator.git"
@@ -126,148 +148,277 @@
                         class="btn btn-dark">
                         <i class="fab fa-github"></i> View on GitHub
                       </a>
-                      <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#project1Modal">
+                      <button
+                        type="button"
+                        class="btn btn-dark"
+                        data-bs-toggle="modal"
+                        data-bs-target="#project1Modal">
                         More Info
                       </button>
                     </div>
                   </div>
                 </div>
-                <!-- More info  -->
-            <div class="modal fade" id="project1Modal" tabindex="-1" aria-labelledby="project1ModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title" id="project1ModalLabel">AirportSimulator Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    <p>AirportSimulator is a desktop application I built for my C# II class at Malmö University,
-                        using C# and Windows Forms,
-                        simulating the operations of an airport in real-time. This project provides 
-                        users with the ability to manage various aspects of airport activity, focusing 
-                        on the scheduling and coordination of aircraft movements. <br><br>
+                <!-- More info second window  -->
+                <div
+                  class="modal fade"
+                  id="project1Modal"
+                  tabindex="-1"
+                  aria-labelledby="project1ModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="project1ModalLabel">
+                          AirportSimulator Details
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <p>
+                          AirportSimulator is a desktop application I built for
+                          my C# II class at Malmö University, using C# and
+                          Windows Forms, simulating the operations of an airport
+                          in real-time. This project provides users with the
+                          ability to manage various aspects of airport activity,
+                          focusing on the scheduling and coordination of
+                          aircraft movements. <br /><br />
 
-                        Key Features: <br>
-                        Flight Scheduling: Users can simulate both takeoff and landing operations for 
-                        multiple aircraft. <br>
-                        Aircraft Management: Allows tracking of multiple aircraft, including details 
-                        such as model, flight number, origin, and destination. <br>
-                        Runway Utilization: The application efficiently manages runway availability, 
-                        ensuring that no two aircraft are using the same runway simultaneously. <br>
-                        Time Simulation: Calculate and display estimated arrival times based on real-world data. <br>
-                        Emergency Handling: Simulate emergency landings and prioritize emergency flights. <br>
-                        Realistic Visual Representation: A simplified yet functional user interface 
-                        simulates the flow of air traffic at an airport. <br> <br>
-                        This application serves as a demonstration of how object-oriented principles 
-                        can be applied to simulate real-world systems. 
-                        It showcases my skills in C#, event-driven programming, and design 
-                        through the use of Windows Forms.</p>
+                          Key Features: <br />
+                          Flight Scheduling: Users can simulate both takeoff and
+                          landing operations for multiple aircraft. <br />
+                          Aircraft Management: Allows tracking of multiple
+                          aircraft, including details such as model, flight
+                          number, origin, and destination. <br />
+                          Runway Utilization: The application efficiently
+                          manages runway availability, ensuring that no two
+                          aircraft are using the same runway simultaneously.
+                          <br />
+                          Time Simulation: Calculate and display estimated
+                          arrival times based on real-world data. <br />
+                          Emergency Handling: Simulate emergency landings and
+                          prioritize emergency flights. <br />
+                          Realistic Visual Representation: A simplified yet
+                          functional user interface simulates the flow of air
+                          traffic at an airport. <br />
+                          <br />
+                          This application serves as a demonstration of how
+                          object-oriented principles can be applied to simulate
+                          real-world systems. It showcases my skills in C#,
+                          event-driven programming, and design through the use
+                          of Windows Forms.
+                        </p>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal">
+                          Close
+                        </button>
+                        <a
+                          href="https://github.com/666belly/airportsimulator.git"
+                          target="_blank"
+                          class="btn btn-dark">
+                          <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                      </div>
                     </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="https://github.com/666belly/airportsimulator.git" target="_blank" class="btn btn-dark">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <!-- Project 2-->
-            <div class="col-md-4 project-item">
-                <div class="card">
-                  <img
-                    src="img/project2.png"
-                    class="card-img-top"
-                    alt="Project 2 Screenshot" />
-                  <div class="card-body">
-                    <h5 class="card-title">AnimalManager</h5>
-                    <p class="card-text">
-                        AnimalManager is a C# application designed to streamline 
-                        the management of animals. It allows 
-                        users to track and manage details about various animals.
-                    </p>
-                    <a
-                      href="https://github.com/666belly/AnimalManager.git"
-                      target="_blank"
-                      class="btn btn-dark">
-                      <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#project2Modal">
-                      More Info
-                    </button>
                   </div>
                 </div>
-              </div>
-              <!-- More info  -->
-          <div class="modal fade" id="project2Modal" tabindex="-1" aria-labelledby="project2ModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                  <div class="modal-header">
-                  <h5 class="modal-title" id="project1ModalLabel">AirportSimulator Details</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <p>AnimalManager is a comprehensive C# application that simplifies the management of animal 
-                        information for various users. It provides a user-friendly interface where users can 
-                        track and manage animals' characteristics, health records, and habitat information. <br> <br>
-
-                        Key Features: <br>
-                        - Animal Tracking: Add and view detailed information about animals, including breed, 
-                        age, health records, and more. <br>
-                        - Health Record Management: Keep track of veterinary visits, medical records, and treatments. <br>
-                        - Habitat Information: Record and manage details about the living environment for each animal. <br>
-                        - User-Friendly Interface: Built using Windows Forms, ensuring a smooth and intuitive user experience. <br>
-                        - Database Integration: Efficiently stores data for easy access and retrieval, ensuring 
-                        scalability and performance. <br>
+                <!-- Project 2-->
+                <div class="col-md-4 project-item">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">AnimalManager</h5>
+                      <img src="img/csharp.png" height="20px" />
+                      <p class="card-text">
+                        AnimalManager is a C# application designed to streamline
+                        the management of animals. It allows users to track and
+                        manage details about various animals.
                       </p>
-                  </div>
-                  <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <a href="https://github.com/666belly/AnimalManager.git" target="_blank" class="btn btn-dark">
-                      <i class="fab fa-github"></i> View on GitHub
-                  </a>
-                  </div>
-              </div>
-              </div>
-          </div>
-         
-              <!-- Project 3 -->
-              <div class="col-md-4 project-item">
-                <div class="card">
-                  <img
-                    src=""
-                    class="card-img-top"
-                    alt="Project 3 Screenshot" />
-                  <div class="card-body">
-                    <h5 class="card-title">Project 3</h5>
-                    <p class="card-text">
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                      Illo maxime sequi ducimus ea voluptatum vitae labore, ab, 
-                      possimus dolorum repudiandae distinctio sunt dolores, 
-                      repellendus aliquam itaque earum quis fuga dolor? 
-                      Voluptatibus voluptate veritatis odit possimus repellendus 
-                      reprehenderit provident quidem dolores, fuga non vel,
-                      recusandae, voluptatem officiis! Soluta similique ipsa fuga.
-                    </p>
-                    <a
-                      href="https://github.com/your-username/project3"
-                      target="_blank"
-                      class="btn btn-dark">
-                      <i class="fab fa-github"></i> View on GitHub
-                    </a>
+                      <a
+                        href="https://github.com/666belly/AnimalManager.git"
+                        target="_blank"
+                        class="btn btn-dark">
+                        <i class="fab fa-github"></i> View on GitHub
+                      </a>
+                      <button
+                        type="button"
+                        class="btn btn-dark"
+                        data-bs-toggle="modal"
+                        data-bs-target="#project2Modal">
+                        More Info
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+                <!-- More info second window -->
+                <div
+                  class="modal fade"
+                  id="project2Modal"
+                  tabindex="-1"
+                  aria-labelledby="project2ModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="project2ModalLabel">
+                          AirportSimulator Details
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <p>
+                          AnimalManager is a comprehensive C# application that
+                          simplifies the management of animal information for
+                          various users. It provides a user-friendly interface
+                          where users can track and manage animals'
+                          characteristics, health records, and habitat
+                          information. <br />
+                          <br />
 
+                          Key Features: <br />
+                          - Animal Tracking: Add and view detailed information
+                          about animals, including breed, age, health records,
+                          and more. <br />
+                          - Health Record Management: Keep track of veterinary
+                          visits, medical records, and treatments. <br />
+                          - Habitat Information: Record and manage details about
+                          the living environment for each animal. <br />
+                          - User-Friendly Interface: Built using Windows Forms,
+                          ensuring a smooth and intuitive user experience.
+                          <br />
+                          - Database Integration: Efficiently stores data for
+                          easy access and retrieval, ensuring scalability and
+                          performance. <br />
+                        </p>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal">
+                          Close
+                        </button>
+                        <a
+                          href="https://github.com/666belly/AnimalManager.git"
+                          target="_blank"
+                          class="btn btn-dark">
+                          <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="col-md-4 project-item">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Math Zombies</h5>
+                      <i class="fa-brands fa-python"></i>
+                      <p class="card-text">
+                        MathZombies is an educational application that blends
+                        the excitement of a zombie-themed game with the
+                        challenge of solving math problems. Built using Python.
+                      </p>
+                      <a
+                        href="https://github.com/666belly/mathzombies.git"
+                        target="_blank"
+                        class="btn btn-dark">
+                        <i class="fab fa-github"></i> View on GitHub
+                      </a>
+                      <button
+                        type="button"
+                        class="btn btn-dark"
+                        data-bs-toggle="modal"
+                        data-bs-target="#project3Modal">
+                        More Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- More info second window -->
+                <div
+                  class="modal fade"
+                  id="project3Modal"
+                  tabindex="-1"
+                  aria-labelledby="project3ModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="project3ModalLabel">
+                          Math Zombies
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <p>
+                          This Python program is an interactive math-based game
+                          called "Math Zombies!" where players must solve math
+                          questions to avoid encountering zombies behind doors.
+                          <br />
+                          <br />
+                          Here's an overview of its functionality: <br />
+                          - Question Generation: Based on the player's chosen
+                          operation (multiplication, division, or modulus),
+                          random math questions are generated. For
+                          multiplication, the user selects a table, while for
+                          division and modulus, a divisor is chosen. <br />
+                          - Gameplay: The player is asked to solve 12 randomly
+                          generated math questions. For each correct answer,
+                          they must choose one of several doors, behind which
+                          zombies may be hiding. The number of doors decreases
+                          as the player progresses, increasing the challenge.
+                          <br />
+                          - User Interaction: The player inputs their answers
+                          and door choices. If they solve all the questions
+                          correctly and avoid zombies, they win. Incorrect
+                          answers or bad door choices end the game. <br />
+                          - Replay Option: After each game, the player is asked
+                          if they want to play again. The program emphasizes
+                          user input validation, randomization for question
+                          generation, and a simple but fun storyline to engage
+                          users in solving math problems.
+                        </p>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal">
+                          Close
+                        </button>
+                        <a
+                          href="https://github.com/666belly/mathzombies.git"
+                          target="_blank"
+                          class="btn btn-dark">
+                          <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <h4 id="list-item-5">CV</h4>
               <p>
                 <iframe
-                  src="img/cv2023.pdf"
+                  src="img/IsabelDemirelCV24.pdf"
                   width="100%"
                   height="600px"></iframe>
-                <a href="img/cv2023.pdf" download class="btn">
+                <a href="img/IsabelDemirelCV24.pdf" download class="btn">
                   <i class="fa-solid fa-download"></i> Download my CV
                 </a>
               </p>
@@ -277,6 +428,7 @@
       </div>
     </div>
 
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
