@@ -117,3 +117,64 @@ p a:hover {
 iframe {
   height: 600px;
 }
+
+@media (max-width: 1024px) {
+  .sidefoot {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  header {
+    margin-left: 0;
+  }
+
+  .profilepic {
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .typewriter {
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidefoot {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+
+  header {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .typewriter {
+    font-size: 24px;
+  }
+
+  .card-body {
+    height: auto;
+  }
+
+  iframe {
+    height: 300px;
+  }
+}
