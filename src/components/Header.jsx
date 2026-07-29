@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import profilePic from "../assets/profilepic.jpg";
+// import profilePic from "../assets/profilepic.jpg";
 import "../components/Style/index.css";
 import "../components/Style/header.css";  
 
 function Header() {
-  const textToType = "Hi, I'm Isabel, welcome to my portfolio! :)";
+  const textToType = "Hi, I'm Isabel! Welcome to my portfolio! :)";
   const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);
 
@@ -24,7 +24,7 @@ function Header() {
 
   return (
     <header id="header">
-      <img className="header-pic" src={profilePic} alt="Profile" />
+      {/* <img className="header-pic" src={profilePic} alt="Profile" /> */}
       <div className="typewriter">{displayedText}</div>
     </header>
   );

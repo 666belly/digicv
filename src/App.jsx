@@ -21,7 +21,6 @@ function App() {
 
       <ErrorBoundary>
         <main id="main-content" className="main-content" role="main">
-          {/* Each major section is a sibling (fixed nesting bug) */}
           <Suspense fallback={<LoadingFallback />}>
             <section id="header" aria-label="Header">
               <Header />
