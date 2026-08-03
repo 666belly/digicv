@@ -16,7 +16,6 @@ body {
   font-family: "Montserrat", "Poppins", sans-serif;
   color: #ffffff;
   background-color: #000000;
-  background-image: url('../assets/starrybackground.png');
   background-attachment: fixed;
   background-repeat: repeat;
   -webkit-font-smoothing: antialiased;
