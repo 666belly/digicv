@@ -13,7 +13,6 @@
   font-family: "Montserrat", "Poppins", sans-serif;
   color: white;
   background-color: #000;
-  background-image: url('./assets/starrybackground.png');
   background-attachment: fixed;
   background-repeat: repeat;
 }
@@ -179,7 +178,6 @@ iframe {
 .top-navbar {
   width: 100%;
   background-color: black;
-  background-image: url('./assets/starrybackground.png');
   background-attachment: fixed;
   background-repeat: repeat;
   display: flex;
