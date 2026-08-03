@@ -1,25 +1,106 @@
 /* About section */
 #about {
+
+  min-height: 100vh;
+
   display: flex;
-  justify-content: center;
-  padding: 40px 20px;
+
+  align-items: center;
+
+  padding: 50px 8vw;
+
 }
 
+
+/* Main container */
 .about-container {
-  max-width: 800px;
-  text-align: left;
+
+  width: 100%;
+
+  max-width: 1000px;
+
 }
 
-.about-container h4 {
-  text-align: left;
-  margin-bottom: 30px;
-  font-size: 36px;
-  color: rgb(199, 183, 213);
+
+/* Title */
+.about-container h2 {
+
+  color: rgb(199,183,213);
+
+  font-size: clamp(3rem, 5vw, 4.5rem);
+
+  font-weight: 500;
+
+  letter-spacing: 4px;
+
+  margin: 0 0 35px 0;
+
+  line-height: 1;
+
 }
 
+
+
+/* Text */
 .about-container p {
-  font-size: 18px;
+
+  max-width: 750px;
+
+  font-size: 1.1rem;
+
   color: white;
-  margin-bottom: 20px;
+
+  opacity: 0.85;
+
   line-height: 1.7;
+
+  margin-bottom: 20px;
+
+}
+
+
+
+/* Tablet */
+@media(max-width:900px){
+
+  #about {
+
+    padding: 40px;
+
+  }
+
+
+  .about-container h2 {
+
+    font-size: 3.5rem;
+
+  }
+
+}
+
+
+
+/* Mobile */
+@media(max-width:600px){
+
+  #about {
+
+    padding: 30px 20px;
+
+  }
+
+
+  .about-container h2 {
+
+    font-size: 3rem;
+
+  }
+
+
+  .about-container p {
+
+    font-size: 1rem;
+
+  }
+
 }

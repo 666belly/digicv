@@ -1,150 +1,294 @@
-:root{
-  --accent: #c7b7d5;
-  --muted: rgba(255,255,255,0.9);
-  --bg: #07070a;
-  --gap: 10px;
+:root {
+  --accent: rgb(199,183,213);
 }
 
-/* Force section to exactly one viewport page */
-.skills-compact-root{
-  height: 100vh;            
-  overflow: hidden;         /* prevent extra scrolling inside */
-  background: var(--bg);
-  color: var(--muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(12px, 2.5vh, 28px);
+/* Fix extra scroll: make sizing include padding and remove default body margin */
+html, *, *::before, *::after {
   box-sizing: border-box;
 }
+body {
+  margin: 0;
+}
 
-/* Container uses all available height, split into header/grid/footer */
-.skills-compact-inner{
+
+/* Whole viewport section */
+#skills {
+
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 60px 8vw;
+
+  box-sizing: border-box;
+
+}
+
+
+/* Main container */
+
+.skills-layout {
+
   width: 100%;
+
   max-width: 1200px;
-  height: 100%;
+
+  margin: 0; /* change this */
+
   display: flex;
+
   flex-direction: column;
-  gap: 8px;
+
+  gap: 45px;
+
 }
 
-/* Header is compact */
-.skills-compact-header{
-  flex: 0 0 auto;
-  display:flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 4px;
+.skills-title {
+  width: 100%;
+  text-align: left;
 }
-.skills-compact-header h2{
+
+
+/* Title */
+
+.skills-title h2 {
+
   color: var(--accent);
-  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+
+  font-size: clamp(3rem,6vw,5.5rem);
+
+  font-weight: 500;
+
+  letter-spacing: 4px;
+
   margin: 0;
-}
-.skills-compact-sub{
-  color: rgba(255,255,255,0.6);
-  font-size: 0.85rem;
-  margin: 0;
-}
 
-/* The grid consumes the remaining vertical space and is dense */
-.skills-compact-grid{
-  flex: 1 1 auto;
-  display: grid;
-  grid-template-columns: 1fr; /* group per row; adjust via media query */
-  gap: 12px;
-  overflow: hidden;
-}
-
-/* Each group has a small title and a denser grid for the skills */
-.skills-compact-group{
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  min-height: 0; /* allow children to shrink */
-}
-.group-title{
-  color: var(--accent);
-  font-size: 0.85rem;
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* Denser grid for the skills themselves; auto-fit keeps them responsive */
-.group-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  gap: var(--gap);
-  align-items: center;
-}
-
-/* Compact skill card (button for keyboard focus) */
-.skill-card{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  background: rgba(0, 0, 0, 0);
-  border-radius: 8px;
-  padding: 8px 6px;
-  height: 84px; /* fixed small height to help fit rows */
-  min-height: 64px;
-  border: none;
-  color: inherit;
-  cursor: pointer;
-  transition: transform 150ms ease, box-shadow 150ms ease;
-  text-align: center;
-  font-family: inherit;
-}
-.skill-card:focus,
-.skill-card:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0);
-  color: var(--accent);
-  outline: none;
-}
-.skill-icon{
-  font-size: clamp(20px, 3.8vw, 28px);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.skill-name{
-  font-size: 0.78rem;
   line-height: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
+
 }
 
-/* Footer small print */
-.skills-compact-footer{
-  flex: 0 0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
+
+
+/* Skill categories */
+
+.skills-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 45px 80px;
+
+}
+
+
+
+/* Category */
+
+.skill-group h3 {
+
+  color: var(--accent);
+
+  font-size: 1rem;
+
+  font-weight: 500;
+
+  text-transform: uppercase;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 20px;
+
+}
+
+
+
+/* Icons */
+
+.group-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+
+}
+
+
+
+/* Individual icon */
+
+.skill-card {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
   gap: 8px;
-}
-.muted{ color: rgba(255,255,255,0.5); font-size: 0.75rem; }
 
-/* Responsive tweaks: show groups side-by-side on wide screens */
-@media (min-width: 980px){
-  .skills-compact-grid{
-    grid-template-columns: repeat(2, 1fr); /* two columns of groups */
+  color: white;
+
+  background: transparent;
+
+  border: none;
+
+  padding: 5px;
+
+  transition: 
+    transform 0.3s ease,
+    color 0.3s ease;
+
+}
+
+
+
+.skill-card:hover {
+
+  color: var(--accent);
+
+  transform: translateY(-6px);
+
+}
+
+
+
+/* Icon */
+
+.skill-icon {
+
+  font-size: 38px;
+
+}
+
+
+
+/* Name */
+
+.skill-name {
+
+  font-size: 0.75rem;
+
+  text-align: center;
+
+}
+
+
+
+
+
+@media(max-width:900px){
+
+
+  #skills {
+
+    padding: 50px 30px;
+
   }
+
+
+  .skills-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+  }
+
+
 }
 
-/* Mobile: tighter heights */
-@media (max-width: 520px){
-  .skill-card{ height: 72px; padding:6px; }
-  .group-grid{ gap:8px; }
+
+
+
+
+@media(max-width:600px){
+
+
+  .group-grid {
+
+    grid-template-columns: repeat(3,1fr);
+
+  }
+
+
 }
 
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .skill-card { transition: none; transform: none; box-shadow: none; }
+
+
+.skill-card:hover {
+
+  color: var(--accent);
+
+  transform: translateY(-6px);
+
+}
+
+
+
+/* Icon */
+
+.skill-icon {
+
+  font-size: 38px;
+
+}
+
+
+
+/* Name */
+
+.skill-name {
+
+  font-size: 0.75rem;
+
+  text-align: center;
+
+}
+
+
+
+
+
+@media(max-width:900px){
+
+
+  #skills {
+
+    padding: 50px 30px;
+
+  }
+
+
+  .skills-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+  }
+
+
+}
+
+
+
+
+
+@media(max-width:600px){
+
+
+  .group-grid {
+
+    grid-template-columns: repeat(3,1fr);
+
+  }
+
+
 }

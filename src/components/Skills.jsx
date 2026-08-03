@@ -8,6 +8,7 @@ import {
   FaDatabase,
   FaMicrochip
 } from "react-icons/fa";
+
 import {
   SiTypescript,
   SiJavascript,
@@ -16,11 +17,14 @@ import {
   SiRaspberrypi,
   SiPostman
 } from "react-icons/si";
+
 import "../components/Style/skills.css";
 
 
 function Skills() {
+
   const skillGroups = [
+
     {
       title: "Frontend",
       skills: [
@@ -28,18 +32,24 @@ function Skills() {
         { name: "TypeScript", icon: SiTypescript },
         { name: "JavaScript", icon: SiJavascript },
         { name: "HTML", icon: SiHtml5 },
-        { name: "Bootstrap", icon: SiBootstrap }
       ]
     },
+
+
     {
       title: "Backend",
       skills: [
         { name: "C#", icon: FaCode },
         { name: ".NET", icon: FaCode },
         { name: "ASP.NET", icon: FaCode },
-        { name: "SQL", icon: FaDatabase }
+        { name: "SQL", icon: FaDatabase },   
+        { name: "Python", icon: FaPython },
+        { name: "MicroPython", icon: FaPython }
+
       ]
     },
+
+
     {
       title: "Tools",
       skills: [
@@ -48,54 +58,107 @@ function Skills() {
         { name: "Postman", icon: SiPostman }
       ]
     },
+
+
     {
       title: "Other",
       skills: [
         { name: "Raspberry Pi", icon: SiRaspberrypi },
-        { name: "Python", icon: FaPython },
-        { name: "MicroPython", icon: FaPython },
         { name: "IoT", icon: FaMicrochip }
       ]
     }
+
   ];
 
-  return (
-    <section id="skills" aria-labelledby="skills-heading" className="skills-compact-root">
-      <div className="skills-compact-inner">
-        <header className="skills-compact-header">
-          <h2 id="skills-heading">Skills</h2>
-        </header>
 
-        <div className="skills-compact-grid" role="list">
+  return (
+
+    <section id="skills">
+
+
+      <div className="skills-layout">
+
+
+        <div className="skills-title">
+
+          <h2 id="skills-heading">
+            Skills
+          </h2>
+
+        </div>
+
+
+
+        <div className="skills-grid">
+
+
           {skillGroups.map((group) => (
-            <div className="skills-compact-group" key={group.title}>
-              <h3 className="group-title">{group.title}</h3>
-              <div className="group-grid" role="list">
+
+            <div 
+              className="skill-group" 
+              key={group.title}
+            >
+
+
+              <h3>
+                {group.title}
+              </h3>
+
+
+
+              <div className="group-grid">
+
+
                 {group.skills.map((skill) => {
+
+
                   const Icon = skill.icon;
+
+
                   return (
-                    <button
-                      key={skill.name}
+
+                    <div
                       className="skill-card"
-                      tabIndex={0}
+                      key={skill.name}
                       title={skill.name}
-                      aria-label={skill.name}
-                      onClick={() => {}}
                     >
-                      <span className="skill-icon" aria-hidden="true">
+
+                      <span className="skill-icon">
                         <Icon />
                       </span>
-                      <span className="skill-name">{skill.name}</span>
-                    </button>
+
+
+                      <span className="skill-name">
+                        {skill.name}
+                      </span>
+
+
+                    </div>
+
                   );
+
                 })}
+
+
               </div>
+
+
             </div>
+
           ))}
+
+
         </div>
+
+
       </div>
+
+
     </section>
+
   );
+
 }
+
 
 export default Skills;
