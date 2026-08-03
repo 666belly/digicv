@@ -1,68 +1,97 @@
 import React from "react";
-import "../components/Style/index.css";
+import {
+  FaReact,
+  FaGithub,
+  FaFigma,
+  FaPython,
+  FaCode,
+  FaDatabase,
+  FaMicrochip
+} from "react-icons/fa";
+import {
+  SiTypescript,
+  SiJavascript,
+  SiHtml5,
+  SiBootstrap,
+  SiRaspberrypi,
+  SiPostman
+} from "react-icons/si";
 import "../components/Style/skills.css";
 
+
 function Skills() {
+  const skillGroups = [
+    {
+      title: "Frontend",
+      skills: [
+        { name: "React", icon: FaReact },
+        { name: "TypeScript", icon: SiTypescript },
+        { name: "JavaScript", icon: SiJavascript },
+        { name: "HTML", icon: SiHtml5 },
+        { name: "Bootstrap", icon: SiBootstrap }
+      ]
+    },
+    {
+      title: "Backend",
+      skills: [
+        { name: "C#", icon: FaCode },
+        { name: ".NET", icon: FaCode },
+        { name: "ASP.NET", icon: FaCode },
+        { name: "SQL", icon: FaDatabase }
+      ]
+    },
+    {
+      title: "Tools",
+      skills: [
+        { name: "GitHub", icon: FaGithub },
+        { name: "Figma", icon: FaFigma },
+        { name: "Postman", icon: SiPostman }
+      ]
+    },
+    {
+      title: "Other",
+      skills: [
+        { name: "Raspberry Pi", icon: SiRaspberrypi },
+        { name: "Python", icon: FaPython },
+        { name: "MicroPython", icon: FaPython },
+        { name: "IoT", icon: FaMicrochip }
+      ]
+    }
+  ];
+
   return (
-    <section id="skills" aria-labelledby="skills-heading">
-      <div className="container skills-inner">
-        <h4 id="skills-heading">Skills</h4>
+    <section id="skills" aria-labelledby="skills-heading" className="skills-compact-root">
+      <div className="skills-compact-inner">
+        <header className="skills-compact-header">
+          <h2 id="skills-heading">Skills</h2>
+        </header>
 
-        <div className="skills-container">
-          <div className="tech-stack" aria-label="Technical skills and tools">
-            <h5>Tech Stack</h5>
-            <div className="tech-stack-categories">
-              <div className="tech-card">
-                <strong>Languages</strong>
-                <ul className="skills-list">
-                  <li>C#</li>
-                  <li>Python</li>
-                  <li>MicroPython</li>
-                  <li>JavaScript</li>
-                  <li>TypeScript</li>
-                  <li>HTML/CSS</li>
-                </ul>
-              </div>
-
-              <div className="tech-card">
-                <strong>Frameworks & Libraries</strong>
-                <ul className="skills-list">
-                  <li>React</li>
-                  <li>React Native</li>
-                  <li>ASP.NET</li>
-                </ul>
-              </div>
-
-              <div className="tech-card">
-                <strong>Tools & Platforms</strong>
-                <ul className="skills-list">
-                  <li>Xcode</li>
-                </ul>
-              </div>
-
-              <div className="tech-card">
-                <strong>Other Technologies</strong>
-                <ul className="skills-list">
-                  <li>REST API</li>
-                  <li>Raspberry Pi</li>
-                  <li>Git</li>
-                  <li>Postman</li>
-                  <li>Figma</li>
-                </ul>
+        <div className="skills-compact-grid" role="list">
+          {skillGroups.map((group) => (
+            <div className="skills-compact-group" key={group.title}>
+              <h3 className="group-title">{group.title}</h3>
+              <div className="group-grid" role="list">
+                {group.skills.map((skill) => {
+                  const Icon = skill.icon;
+                  return (
+                    <button
+                      key={skill.name}
+                      className="skill-card"
+                      tabIndex={0}
+                      title={skill.name}
+                      aria-label={skill.name}
+                      onClick={() => {}}
+                    >
+                      <span className="skill-icon" aria-hidden="true">
+                        <Icon />
+                      </span>
+                      <span className="skill-name">{skill.name}</span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
-          </div>
-
-          <aside className="languages-spoken" aria-label="Languages spoken">
-            <h5>Languages I Speak</h5>
-            <ul className="languages-list">
-              <li>English</li>
-              <li>Swedish</li>
-              <li>Turkish</li>
-              <li>German</li>
-              <li>Danish</li>
-            </ul>
-          </aside>
+          ))}
         </div>
       </div>
     </section>

@@ -1,118 +1,150 @@
-/* Skills section improvements
-   - Use grid for a stable two-column layout
-   - Allow the section to grow (override 100vh snap if present globally)
-   - Responsive breakpoints to stack columns on small screens
-*/
-
-/* Ensure this section can grow and doesn't force content to overlap */
-#skills {
-  /* override global fixed-height section if present */
-  height: auto !important;
-  min-height: 60vh;
-  padding: 60px 20px;
-  display: block;
+:root{
+  --accent: #c7b7d5;
+  --muted: rgba(255,255,255,0.9);
+  --bg: #07070a;
+  --gap: 10px;
 }
 
-/* Inner container to limit width and center content */
-.skills-inner {
-  max-width: 1000px;
-  margin: 0 auto;
+/* Force section to exactly one viewport page */
+.skills-compact-root{
+  height: 100vh;            
+  overflow: hidden;         /* prevent extra scrolling inside */
+  background: var(--bg);
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 2.5vh, 28px);
+  box-sizing: border-box;
 }
 
-/* Heading spacing */
-#skills h4 {
-  margin-bottom: 28px;
-  font-size: 34px;
-  color: rgb(199, 183, 213);
-  text-align: left;
-}
-
-/* Two-column layout: main tech area + side languages column */
-.skills-container {
-  display: grid;
-  grid-template-columns: 1fr 280px; /* flexible main column + fixed-ish sidebar */
-  gap: 36px;
-  align-items: start;
+/* Container uses all available height, split into header/grid/footer */
+.skills-compact-inner{
   width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* Make the sidebar visually distinct and pinned (optional) */
-.languages-spoken {
-  background: rgba(255,255,255,0.02);
-  padding: 18px;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+/* Header is compact */
+.skills-compact-header{
+  flex: 0 0 auto;
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.skills-compact-header h2{
+  color: var(--accent);
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  margin: 0;
+}
+.skills-compact-sub{
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+  margin: 0;
 }
 
-/* Make sure lists don't overflow the sidebar */
-.languages-list {
-  list-style: none;
-  margin-top: 12px;
-  padding: 0;
-}
-.languages-list li {
-  padding: 6px 0;
-  border-bottom: 1px solid rgba(199, 183, 213, 0.07);
-}
-.languages-list li:last-child { border-bottom: none; }
-
-/* Tech stack column uses a responsive grid for the cards */
-.tech-stack-categories {
+/* The grid consumes the remaining vertical space and is dense */
+.skills-compact-grid{
+  flex: 1 1 auto;
   display: grid;
-  grid-template-columns: repeat(2, minmax(180px, 1fr));
-  gap: 20px;
-}
-
-/* Card visuals */
-.tech-card {
-  background-color: rgba(255, 255, 255, 0.03);
-  padding: 18px;
-  border-radius: 10px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  min-height: 120px;
+  grid-template-columns: 1fr; /* group per row; adjust via media query */
+  gap: 12px;
   overflow: hidden;
 }
-.tech-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 24px rgba(199, 183, 213, 0.08);
+
+/* Each group has a small title and a denser grid for the skills */
+.skills-compact-group{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 0; /* allow children to shrink */
+}
+.group-title{
+  color: var(--accent);
+  font-size: 0.85rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-/* Lists inside cards */
-.skills-list {
-  list-style: none;
-  margin: 8px 0 0 0;
-  padding: 0;
-}
-.skills-list li {
-  padding: 6px 0;
-  border-bottom: 1px solid rgba(199, 183, 213, 0.06);
-}
-.skills-list li:last-child { border-bottom: none; }
-
-/* Make sure long cards don't break layout; let them scroll internally */
-.card-body {
-  max-height: 320px;
-  overflow-y: auto;
+/* Denser grid for the skills themselves; auto-fit keeps them responsive */
+.group-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: var(--gap);
+  align-items: center;
 }
 
-/* Responsive: stack everything on small screens */
-@media (max-width: 900px) {
-  .skills-container {
-    grid-template-columns: 1fr; /* single column */
+/* Compact skill card (button for keyboard focus) */
+.skill-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 8px;
+  padding: 8px 6px;
+  height: 84px; /* fixed small height to help fit rows */
+  min-height: 64px;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  text-align: center;
+  font-family: inherit;
+}
+.skill-card:focus,
+.skill-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0);
+  color: var(--accent);
+  outline: none;
+}
+.skill-icon{
+  font-size: clamp(20px, 3.8vw, 28px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.skill-name{
+  font-size: 0.78rem;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Footer small print */
+.skills-compact-footer{
+  flex: 0 0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap: 8px;
+}
+.muted{ color: rgba(255,255,255,0.5); font-size: 0.75rem; }
+
+/* Responsive tweaks: show groups side-by-side on wide screens */
+@media (min-width: 980px){
+  .skills-compact-grid{
+    grid-template-columns: repeat(2, 1fr); /* two columns of groups */
   }
-
-  .tech-stack-categories {
-    grid-template-columns: 1fr; /* each card full width */
-  }
-
-  .languages-spoken {
-    order: 2;
-    width: 100%;
-  }
 }
 
-/* Small-screen typography tweaks */
-@media (max-width: 480px) {
-  #skills h4 { font-size: 28px; }
-  .tech-card { padding: 14px; }
+/* Mobile: tighter heights */
+@media (max-width: 520px){
+  .skill-card{ height: 72px; padding:6px; }
+  .group-grid{ gap:8px; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .skill-card { transition: none; transform: none; box-shadow: none; }
 }

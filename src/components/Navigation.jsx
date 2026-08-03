@@ -7,8 +7,8 @@ function Navigation() {
     <nav className="top-navbar">
       <div className="nav-links">
         <a href="#about">#about-me</a>
-        <a href="#skills">#skills</a>        
         <a href="#projects">#projects</a>
+        <a href="#skills">#skills</a>        
         <a href="#contact">#contact-me</a>
       </div>
       <div className="social-icons">
@@ -20,7 +20,7 @@ function Navigation() {
           <i className="fab fa-github fa-lg"></i>
         </a>
         <a
-          href="https://www.linkedin.com/in/isabel-demirel-443979171/"
+          href="https://www.linkedin.com/in/isabel-feltman-443979171"
           target="_blank"
           rel="noopener noreferrer"
         >

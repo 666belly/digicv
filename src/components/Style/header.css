@@ -7,27 +7,15 @@ header#header {
   overflow: hidden;
 }
 
-/* Profile / header picture (oval) */
-.header-pic {
-  position: fixed;       /* keeps it in place */
-  left: 50px;            /* distance from left */
-  top: 50%;              /* vertical center */
-  transform: translateY(-50%);
-  width: 280px;
-  height: 400px;
-  border-radius: 50% / 50%; /* oval */
-  object-fit: cover;
-  z-index: 10;
-}
 
 /* Typewriter block aligned to the right of the image */
 .typewriter {
   position: absolute;
-  left: 350px; /* starts after the picture */
+  left: 50px; /* starts after the picture */
   top: 50%;
   transform: translateY(-50%);
   font-size: 50px;
-  color: rgb(199, 183, 213);
+  color: rgb(222, 208, 234);
   max-width: calc(100% - 400px);
   text-align: left;
   z-index: 5;

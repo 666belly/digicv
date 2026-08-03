@@ -4,7 +4,7 @@ import "../components/Style/index.css";
 import "../components/Style/header.css";  
 
 function Header() {
-  const textToType = "Hi, I'm Isabel! Welcome to my portfolio! :)";
+const textToType = "Hi, I'm Isabel,\nWelcome to my portfolio!";
   const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);
 
@@ -25,8 +25,12 @@ function Header() {
   return (
     <header id="header">
       {/* <img className="header-pic" src={profilePic} alt="Profile" /> */}
-      <div className="typewriter">{displayedText}</div>
-    </header>
+<div className="typewriter">{displayedText.split("\n").map((line, i) => (
+  <React.Fragment key={i}>
+    {line}
+    <br />
+  </React.Fragment>
+))}</div>    </header>
   );
 }
 

@@ -21,7 +21,7 @@ class ErrorBoundary extends React.Component {
       return (
         <div role="alert" style={{ padding: 24 }}>
           <h2>Something went wrong.</h2>
-          <p>Try refreshing the page. If it keeps happening, contact support.</p>
+          <p>Try refreshing the page.</p>
         </div>
       );
     }

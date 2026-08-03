@@ -30,12 +30,12 @@ function App() {
               <About />
             </section>
 
-            <section id="skills" aria-label="Skills">
-              <Skills />
-            </section>
-
             <section id="projects" aria-label="Projects">
               <Projects />
+            </section>
+
+            <section id="skills" aria-label="Skills">
+              <Skills />
             </section>
 
             <section id="contact" aria-label="Contact">
